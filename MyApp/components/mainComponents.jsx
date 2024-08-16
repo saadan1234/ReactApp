@@ -1,6 +1,5 @@
 /* eslint-disable react/prop-types */
 import pizzaData from '../public/data.js';
-import '../src/index.css';
 
 export function App() {
     return (
@@ -38,7 +37,7 @@ export function Pizza(props){
 
 
 export function Header(){
-    return <header className="underline">
+    return <header className="text-3xl font-bold underline">
         Fusion Pizza Co.
     </header>
 }
