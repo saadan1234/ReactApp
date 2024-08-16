@@ -1,3 +1,6 @@
+/* eslint-disable react/prop-types */
+import pizzaData from '../public/data.js';
+import '../src/index.css';
 
 export function App() {
     return (
@@ -11,34 +14,42 @@ export function App() {
     )
 }
 
-export function Pizza(){
-    
-    return <div>
-        <h4>Pizza</h4>
-        <img src="../pizzas/funghi.jpg" alt="Pizza Funghi" width="200px"/>
+export function Menu(){
+    return (
+    <div>
+       <h3>Our Menu</h3>
+       {pizzaData.map((pizzaData)=> {
+            // eslint-disable-next-line react/jsx-key
+            return <Pizza name={pizzaData.name} ingredients={pizzaData.ingredients} photoName={pizzaData.photoName}/>
+       })}
+       
+    </div>
+    )
+}
+
+export function Pizza(props){
+    console.log(props)
+    return <div style={{backgroundColor: "lightyellow"}}>
+        <img src={props.photoName} alt={props.name} width="200px"/>
+        <h6>{props.name}</h6>
+        <h6>{props.ingredients}</h6>
     </div> 
 }
 
 
 export function Header(){
-    return <h3>
+    return <header className="underline">
         Fusion Pizza Co.
-    </h3>
+    </header>
 }
 
-export function Menu(){
-    return (
-    <div>
-       <h3>Our Menu</h3>
-        <Pizza />
-        <Pizza />
-        <Pizza />
-    </div>
-    )
 
-    
-}
 
 export function Footer(){
-    return <footer>{new Date().toLocaleDateString() }. We are currently open. </footer>
+    // const hour = new Date().getHours();
+    // const openHour = 12;
+    // const closeHour = 23 ;
+    // const isOpen = hour>= openHour && hour<= closeHour
+    // isOpen? alert("We are currently open!") : alert("Sorry we are closed!");
+    return <footer  style={{color:"red", fontSize:"32px", backgroundColor: "black"}}> {new Date().toLocaleDateString() }. We are currently open. </footer>
 }
