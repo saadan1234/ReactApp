@@ -30,22 +30,51 @@ export function Menu() {
     );
 }
 
-export function Pizza(props) {
-    return (
-        <div className="flex m-4 p-4 align-middle">
-            <img src={props.pizza.photoName} alt={props.pizza.name} width="150px" />
-            <span className="content-center ml-4 p-6 rounded bg-yellow-300 w-64">
-                <h6 className="font-bold font-serif text-2xl bg-gradient-to-t from-yellow-300 to-yellow-400">
-                    {props.pizza.name}
+export function Pizza({pizza}) {
+    return <>
+        {(pizza.soldOut)?(<>
+            <div className="flex m-4 p-4 align-middle">
+            <img className={"bg-gray-400 opacity-60"} src={pizza.photoName} alt={pizza.name} width="150px" />
+            <span className="content-center ml-4 p-6 rounded bg-gray-300 w-64">
+                <h6 className="font-bold font-serif text-2xl bg-gradient-to-t from-gray-300 to-gray-400">
+                    {pizza.name}
                 </h6>
-                <h6 className="font-serif">Ingredients: {props.pizza.ingredients}</h6>
-                <h6 className="font-serif bg-gradient-to-b from-yellow-300 to-yellow-400">
-                    Price: {props.pizza.price} $
+                <h6 className="font-serif">Ingredients: {pizza.ingredients}</h6>
+                <h6 className="font-serif bg-gradient-to-b from-gray-300 to-gray-400">
+                    Price: {"Sold Out"} 
                 </h6>
             </span>
         </div>
-    );
+        </>):(<>
+            <div className="flex m-4 p-4 align-middle">
+            <img src={pizza.photoName} alt={pizza.name} width="150px" />
+            <span className="content-center ml-4 p-6 rounded bg-yellow-300 w-64">
+                <h6 className="font-bold font-serif text-2xl bg-gradient-to-t from-yellow-300 to-yellow-400">
+                    {pizza.name}
+                </h6>
+                <h6 className="font-serif">Ingredients: {pizza.ingredients}</h6>
+                <h6 className="font-serif bg-gradient-to-b from-yellow-300 to-yellow-400">
+                    Price: {pizza.price+"$"} 
+                </h6>
+            </span>
+        </div>
+        </>
+        )}
+    </>
 }
+
+{/* <div className="flex m-4 p-4 align-middle">
+            <img src={pizza.photoName} alt={pizza.name} width="150px" />
+            <span className="content-center ml-4 p-6 rounded bg-yellow-300 w-64">
+                <h6 className="font-bold font-serif text-2xl bg-gradient-to-t from-yellow-300 to-yellow-400">
+                    {pizza.name}
+                </h6>
+                <h6 className="font-serif">Ingredients: {pizza.ingredients}</h6>
+                <h6 className="font-serif bg-gradient-to-b from-yellow-300 to-yellow-400">
+                    Price: {pizza.price+"$"} 
+                </h6>
+            </span>
+        </div> */}
 
 export function Header() {
     return (
