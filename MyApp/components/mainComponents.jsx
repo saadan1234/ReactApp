@@ -19,6 +19,7 @@ export function App() {
     return (
         <div className="bg-yellow-100 flex flex-col min-h-screen">
             <Header />
+            <SearchBar />
             <div className="flex-grow">
                 <Menu />
             </div>
@@ -50,7 +51,7 @@ export function Pizza({ pizza }) {
         <>
             {pizza.soldOut ? (
                 <div className="flex m-4 p-4 align-middle">
-                    <img className={"bg-gray-400 opacity-60"} src={pizza.photoName} alt={pizza.name} width="150px" />
+                    <img className={"bg-gray-400 opacity-60"} src={pizza.photoName} alt={pizza.name} width="170px" />
                     <span className="content-center ml-4 p-6 rounded bg-gray-300 w-64">
                         <h6 className="font-bold font-serif text-2xl bg-gradient-to-t from-gray-300 to-gray-400">
                             {pizza.name}
@@ -63,7 +64,7 @@ export function Pizza({ pizza }) {
                 </div>
             ) : (
                 <div className="flex m-4 p-4 align-middle">
-                    <img src={pizza.photoName} alt={pizza.name} width="150px" />
+                    <img src={pizza.photoName} alt={pizza.name} width="170px" />
                     <span className="content-center ml-4 p-6 rounded bg-yellow-300 w-64">
                         <h6 className="font-bold font-serif text-2xl bg-gradient-to-t from-yellow-300 to-yellow-400">
                             {pizza.name}
@@ -79,9 +80,31 @@ export function Pizza({ pizza }) {
     );
 }
 
+export function SearchBar(){
+    const [searchQuery, setSearchQuery] = useState('');
+    console.log(searchQuery)
+
+    return (<div className="text-center text-6xl text-white  pt-3 py-5 bg-gradient-to-b from-yellow-300 to-yellow-500">
+        <form action="">
+        <label htmlFor="search" className="mb-2 text-sm font-medium text-yellow-900 sr-only dark:text-white">Search</label>
+    <div className="mx-10 relative">
+        <div className="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+            <svg className="w-4 h-4 text-yellow-500 dark:text-gray-600" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
+            </svg>
+        </div>
+        <input value={searchQuery}
+                    onChange={(e)=>setSearchQuery(e.target.value)}
+                    placeholder="Search for a pizza..." type="search" id="search" className="block w-full p-4 ps-10 text-sm text-yellow-900 border border-yellow-300 rounded-lg bg-gray-50 focus:ring-yellow-500 focus:border-yellow-500 dark:bg-yellow-700 dark:border-yellow-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-yellow-500 dark:focus:border-yellow-500" required />
+        <button type="submit" className="text-white absolute end-2.5 bottom-2.5 bg-yellow-600 hover:bg-yellow-600 focus:ring-4 focus:outline-none focus:ring-yellow-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-yellow-600 dark:hover:bg-yellow-700 dark:focus:ring-yellow-800">Search</button>
+    </div>
+        </form>
+    </div>)
+}
+
 export function Header() {
     return (
-        <header className="font-custom text-center text-6xl text-white rounded-full p-6 bg-gradient-to-t from-yellow-300 to-yellow-500">
+        <header className="font-custom text-center text-6xl text-white  pt-3 py-5 bg-gradient-to-t from-yellow-300 to-yellow-500">
             Fusion Pizza Co.
         </header>
     );
