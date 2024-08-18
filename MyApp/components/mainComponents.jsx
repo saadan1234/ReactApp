@@ -2,14 +2,19 @@
 /* eslint-disable react/prop-types */
 import { useState } from 'react';
 import pizzaData from '../public/data.js';
-import '../public/Flashcard.css';
+import { FlashCard } from './flashCard.jsx';
 
-function flashCards(setShowFlashcard) {
+
+function flashCards(setShowFlashcard){
     setShowFlashcard(true);
 }
 
+
 export function App() {
+
+    
     const [showFlashcard, setShowFlashcard] = useState(false);
+    
 
     return (
         <div className="bg-yellow-100 flex flex-col min-h-screen">
@@ -18,18 +23,12 @@ export function App() {
                 <Menu />
             </div>
             <Footer setShowFlashcard={setShowFlashcard} />
-            {showFlashcard && (
-                <div className="overlay">
-                    <div className="flashcard">
-                        <h2>Order Now</h2>
-                        <p>This is the content of the flashcard.</p>
-                        <button onClick={() => setShowFlashcard(false)}>Close</button>
-                    </div>
-                </div>
-            )}
+            {showFlashcard && <FlashCard setShowFlashcard={setShowFlashcard} />}
         </div>
     );
 }
+
+
 
 export function Menu() {
     return (
