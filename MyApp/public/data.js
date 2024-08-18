@@ -1,17 +1,17 @@
 const pizzaData = [
-    {
-      name: "Focaccia",
-      ingredients: "Bread with italian olive oil and rosemary",
-      price: 6,
-      photoName: "pizzas/focaccia.jpg",
-      soldOut: false,
-    },
+  {
+    name: "Pizza Salamino",
+    ingredients: "Tomato, mozarella, and pepperoni",
+    price: 15,
+    photoName: "pizzas/salamino.jpg",
+    soldOut: true,
+  },
     {
       name: "Pizza Margherita",
       ingredients: "Tomato and mozarella",
       price: 10,
       photoName: "pizzas/margherita.jpg",
-      soldOut: false,
+      soldOut: true,
     },
     {
       name: "Pizza Spinaci",
@@ -28,12 +28,13 @@ const pizzaData = [
       soldOut: false,
     },
     {
-      name: "Pizza Salamino",
-      ingredients: "Tomato, mozarella, and pepperoni",
-      price: 15,
-      photoName: "pizzas/salamino.jpg",
-      soldOut: true,
+      name: "Focaccia",
+      ingredients: "Bread with italian olive oil and rosemary",
+      price: 6,
+      photoName: "pizzas/focaccia.jpg",
+      soldOut: false,
     },
+    
     {
       name: "Pizza Prosciutto",
       ingredients: "Tomato, mozarella, ham, aragula, and burrata cheese",
