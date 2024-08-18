@@ -81,7 +81,7 @@ export function Pizza({ pizza }) {
 
 export function Header() {
     return (
-        <header className="text-center text-3xl text-white font-bold font-serif rounded-full p-6 bg-gradient-to-t from-yellow-300 to-yellow-500">
+        <header className="font-custom text-center text-6xl text-white rounded-full p-6 bg-gradient-to-t from-yellow-300 to-yellow-500">
             Fusion Pizza Co.
         </header>
     );
@@ -92,13 +92,13 @@ export function Footer({ setShowFlashcard }) {
     const isOpen = hour >= 12 && hour <= 23;
     return (
         <footer className="text-center text-3xl text-white font-bold font-serif p-6 bg-gradient-to-b from-yellow-300 to-yellow-500">
-            {new Date().toLocaleDateString()}.
+            {new Date().toDateString()}.
             {isOpen ? (
                 <>
-                    <p>"We are currently open!"</p>
+                    <p className='font-custom text-5xl'>"We are currently open!"</p>
                     <button
                         type="button"
-                        className="m-5 text-gray-900 bg-gradient-to-r from-yellow-200 via-yellow-400 to-yellow-200 hover:bg-gradient-to-b focus:ring-10 focus:outline-2 focus:ring-yellow-950 dark:focus:ring-yellow-800 shadow-lg shadow-yellow-500/50 dark:shadow-lg dark:shadow-yellow-800/80 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2"
+                        className="m-5 text-gray-900 bg-gradient-to-r from-yellow-200 via-yellow-400 to-yellow-200 hover:bg-gradient-to-b focus:ring-10 focus:outline-2 focus:ring-yellow-950 dark:focus:ring-yellow-800 shadow-lg shadow-yellow-500/50 dark:shadow-lg dark:shadow-yellow-800/80 font-medium rounded-full text-2xl px-5 py-2.5 text-center me-2 mb-2"
                         onClick={() => flashCards(setShowFlashcard)}
                     >
                         Order Now
@@ -109,7 +109,7 @@ export function Footer({ setShowFlashcard }) {
                     <p>"Sorry we are closed!"</p>
                     <button
                         type="button"
-                        className="m-5 text-gray-900 bg-gradient-to-r from-yellow-200 via-yellow-400 to-yellow-200 hover:bg-gradient-to-b focus:ring-10 focus:outline-2 focus:ring-yellow-950 dark:focus:ring-yellow-800 shadow-lg shadow-yellow-500/50 dark:shadow-lg dark:shadow-yellow-800/80 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2"
+                        className=" m-5 text-gray-900 bg-gradient-to-r from-yellow-200 via-yellow-400 to-yellow-200 hover:bg-gradient-to-b focus:ring-10 focus:outline-2 focus:ring-yellow-950 dark:focus:ring-yellow-800 shadow-lg shadow-yellow-500/50 dark:shadow-lg dark:shadow-yellow-800/80 font-medium rounded-full text-2xl px-5 py-2.5 text-center me-2 mb-2"
                         onClick={() => flashCards(setShowFlashcard)}
                     >
                         Book Now
