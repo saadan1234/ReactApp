@@ -32,7 +32,7 @@ export function FlashCard({setShowFlashcard}){
                     </svg></button>
                 </div>
                 <button className="py-2 px-4 mx-28 text-gray-900 bg-gradient-to-b from-yellow-200 via-yellow-400 to-yellow-200 hover:bg-gradient-to-b focus:ring-10 focus:outline-2 focus:ring-yellow-950 dark:focus:ring-yellow-800 shadow-lg shadow-yellow-500/50 dark:shadow-lg dark:shadow-yellow-800/80 font-medium rounded-full text-lg  text-center" onClick={() => setShowFlashcard(false)}>Close</button>
-                <button className="py-2 px-4 mx-32 absolute right-0  text-gray-900 bg-gradient-to-b from-yellow-200 via-yellow-400 to-yellow-200 hover:bg-gradient-to-b focus:ring-10 focus:outline-2 focus:ring-yellow-950 dark:focus:ring-yellow-800 shadow-lg shadow-yellow-500/50 dark:shadow-lg dark:shadow-yellow-800/80 font-medium rounded-full text-lg  text-center " onClick={() => alert("Your pizza party will arrive soon!")}>Add to Cart</button>
+                <button className="py-2 px-4 mx-32 right-0  text-gray-900 bg-gradient-to-b from-yellow-200 via-yellow-400 to-yellow-200 hover:bg-gradient-to-b focus:ring-10 focus:outline-2 focus:ring-yellow-950 dark:focus:ring-yellow-800 shadow-lg shadow-yellow-500/50 dark:shadow-lg dark:shadow-yellow-800/80 font-medium rounded-full text-lg  text-center " onClick={() => alert("Your pizza party will arrive soon!")}>Add to Cart</button>
             </div>
         </div>
     )
